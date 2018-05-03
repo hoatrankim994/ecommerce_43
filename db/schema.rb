@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180502063419) do
+ActiveRecord::Schema.define(version: 20180503091151) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
@@ -77,10 +77,15 @@ ActiveRecord::Schema.define(version: 20180502063419) do
     t.string "address"
     t.string "gender"
     t.string "avartar"
-    t.integer "isactive"
+    t.string "activation_digest"
+    t.string "string"
+    t.boolean "activated", default: false
+    t.datetime "activated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "remember_digest"
+    t.string "reset_digest"
+    t.datetime "reset_sent_at"
   end
 
   add_foreign_key "giftcodes", "users"

@@ -9,7 +9,9 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :address
       t.string :gender
       t.string :avartar
-      t.integer :isactive
+      t.string :activation_digest, :string
+      t.boolean :activated, default: false
+      t.datetime :activated_at
       t.timestamps
     end
   end

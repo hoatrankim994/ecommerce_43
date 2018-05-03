@@ -5,3 +5,4 @@ leng_address_max: 150
 leng_phone_max: 30
 check_remember: "1"
 pic_size: 5
+res_expired: 2
