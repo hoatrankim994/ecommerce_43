@@ -37,6 +37,26 @@ en:
     users:
       welcome: "Welcome to the Sample App!!"
       users_not_exist: "User doesn't exist"
+      ple_log: "Please log in."
+      del_user: "User deleted"
+      del_user_fail: "User deleted fail"
+      up_profile: "Profile updated"
+      ple_check_mail: "Please check your email to activate your account"
+    account:
+      acc_active: "Account activated!"
+      inv_act_link: "Invalid activation link"
+    password:
+      reset_mail: "Email sent with password reset instructions"
+      found_mail: "Email address not found"
+      cant_empty: "can't be empty"
+      pass_reset: "Password has been reset."
+      pass_expired: "Password reset has expired."
+    session:
+      account_not: "Account not activated."
+      check_mail: "Check your email for the activation link."
+  model:
+    user:
+      pic_less_5: "should be less than 5MB"
   layouts:
     application:
       book: "Book Store"
@@ -85,3 +105,21 @@ en:
     users:
       sign_up: "Sign up"
       create_acc: "Create my account"
+  users:
+    edit:
+      up_acc: "Update your profile"
+      change: "change"
+      edit_user: "Edit user"
+      save: "Save changes"
+    user:
+      del: "delete"
+      sure: "You sure?"
+    index:
+      all_users: "All users"
+  password_reset:
+    edit:
+      re_pass: "Reset password"
+      up_pass: "Update password"
+    new:
+      forget_pass: "Forgot password"
+      sub: "Submit"

@@ -1,6 +1,7 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token
-  before_save{self.email = email.downcase}
+  attr_accessor :remember_token, :activation_token, :reset_token
+  before_save   :downcase_email
+  before_create :create_activation_digest
   mount_uploader :avartar, PictureUploader
   has_many :orders, dependent: :destroy
   has_one :giftcode, dependent: :destroy
@@ -30,17 +31,52 @@ class User < ApplicationRecord
     update(remember_digest: User.digest(remember_token))
   end
 
-  def authenticated? remember_token
-    return false if remember_digest.blank?
-    BCrypt::Password.new(remember_digest).is_password?(remember_token)
-  end
-
   def forget
     update(remember_digest: nil)
   end
 
   def picture_size
     return if avartar.size <= Settings.pic_size.megabytes
-    errors.add(:avartar, t("pic_less_5"))
+    errors.add(:avartar, t("model.user.pic_less_5"))
+  end
+
+  def authenticated? attribute, token
+    digest = send("#{attribute}_digest")
+    return false if digest.nil?
+    BCrypt::Password.new(digest).is_password?(token)
+  end
+
+  def activate
+    update(activated: true)
+    update(activated_at: Time.zone.now)
+  end
+
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
+  end
+
+  def create_reset_digest
+    self.reset_token = User.new_token
+    update(reset_digest: User.digest(reset_token))
+    update(reset_sent_at: Time.zone.now)
+  end
+
+  def send_password_reset_email
+    UserMailer.password_reset(self).deliver_now
+  end
+
+  def password_reset_expired?
+    reset_sent_at < Settings.res_expired.hours.ago
+  end
+
+  private
+
+  def downcase_email
+    self.email = email.downcase
+  end
+
+  def create_activation_digest
+    self.activation_token  = User.new_token
+    self.activation_digest = User.digest(activation_token)
   end
 end
