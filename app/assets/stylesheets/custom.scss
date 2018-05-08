@@ -28,13 +28,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
-h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
 h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
@@ -189,5 +182,20 @@ input {
     overflow: auto;
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+.products {
+  img {
+    height: 350px;
+    width: 250px;
+    margin-bottom: 10px;
+  }
+}
+
+.product-show {
+  img {
+    height: 350px;
+    width: 350px;
   }
 }

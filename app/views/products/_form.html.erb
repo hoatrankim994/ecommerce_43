@@ -1,0 +1,22 @@
+<%= form_for @product do |f| %>
+  <%= render "shared/error_messages_product" %>
+  <%= f.label :category %>
+  <%= f.select(:category_id, options_for_select(@categories), {prompt: "Select a category"}, {class: "form-control"}) %>
+  <%= f.label :productname %>
+  <%= f.text_field :productname, class: "form-control" %>
+  <%= f.label :author %>
+  <%= f.text_field :author, class: "form-control" %>
+  <%= f.label :price %>
+  <%= f.text_field :price, class: "form-control" %>
+  <%= f.label :discount %>
+  <%= f.text_field :discount, class: "form-control" %>
+  <%= f.label :onhand %>
+  <%= f.text_field :onhand, class: "form-control" %>
+  <%= f.label :image %>
+  <%= f.file_field :image, class: "form-control" %>
+  <%= f.label :productcontent %>
+  <%= f.text_area(:productcontent, size: "50x20") %>
+  <%= f.label :status %>
+  <%= f.select(:status, options_for_select(Product.statuses.keys), {}, {class: "form-control"}) %>
+  <%= f.submit t("products.form.sub"), class: "btn btn-primary" %>
+<% end %>

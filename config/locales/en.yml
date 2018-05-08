@@ -51,6 +51,10 @@ en:
       cant_empty: "can't be empty"
       pass_reset: "Password has been reset."
       pass_expired: "Password reset has expired."
+    products:
+      del_pro: "Product deleted"
+      del_pro_fail: "Product fail deleted"
+      pro_not_exist: "Product doesn't exist"
     session:
       account_not: "Account not activated."
       check_mail: "Check your email for the activation link."
@@ -70,6 +74,8 @@ en:
       setting: "Settings"
       users: "Users"
       account: "Account"
+      add_book: "Add Book"
+      category: "Category"
     footer:
       book: "Book Store"
       the : "The"
@@ -86,7 +92,9 @@ en:
       sign_up: "Sign up now!"
   shared:
     error:
-      form_errors: "The form contains"
+      form_errors: "The form contains %{count} errors"
+    error_product:
+      orther: "The form contains %{count} errors"
   static_pages:
     about:
       about: "About"
@@ -111,6 +119,8 @@ en:
       change: "change"
       edit_user: "Edit user"
       save: "Save changes"
+      male: "Male"
+      female: "Female"
     user:
       del: "delete"
       sure: "You sure?"
@@ -123,3 +133,50 @@ en:
     new:
       forget_pass: "Forgot password"
       sub: "Submit"
+  products:
+    form:
+      sub: "Submit"
+    edit:
+      edit_book: "Edit book"
+      sub: "Submit"
+    index:
+      book_cur: "There are no books currently in this categort"
+    new:
+      new_book: "New Book"
+    show:
+      back: "Back"
+      edit: "Edit"
+      del: "Delete"
+      sure: "Are you sure?"
+      category: "Category:"
+      price: "Price:"
+      quantity: " | Quantity:"
+  form:
+    email_label: "Email"
+    password_label: "Password"
+    pass_confirmation_label: "Password confirmation"
+    male: "Male"
+    female: "Female"
+    remember_label: "Remember"
+  activerecord:
+    attributes:
+      product:
+        productname: "Productname"
+        category: "Category"
+        author: "Author"
+        price: "Price"
+        discount: "Discount"
+        image: "Image"
+        onhand: "Onhand"
+        productcontent: "Productcontent"
+        status: "Status"
+      user:
+        name: "Name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Confirmation"
+        address: "Address"
+        phone: "Phone"
+        gender: "Gender"
+        avartar: "Avartar"
+

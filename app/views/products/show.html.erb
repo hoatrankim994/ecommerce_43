@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-4 product-show">
+    <%= image_tag @product.image.url %>
+  </div>
+  <div class="col-md-8">
+    <h1><%= @product.productname %></h1>
+    <h3><%= t "products.show.category" %><%= @product.category.title %></h3>
+    <span><%= t "products.show.price" %><%= @product.price %><%= t "products.show.quantity" %><%= @product.onhand %></span>
+    <p><%= @product.productcontent %></p>
+  </div>
+</div>
+<% if logged_in? %>
+  <%= link_to t("products.show.back"), root_path %>
+  <%= link_to t("products.show.edit"), edit_product_path(@product) %>
+  <%= link_to t("products.show.del"), product_path(@product), method: :delete, data: {confirm: t("products.show.sure")} %>
+<% end %>

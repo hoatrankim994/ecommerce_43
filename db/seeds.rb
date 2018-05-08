@@ -26,3 +26,13 @@ User.create!(name:  "hoa",
                activated: true,
                activated_at: Time.zone.now)
 end
+
+Category.create!(title: "Fantasy",
+             parent_id: "0"
+             )
+Category.create!(title: "Technology",
+             parent_id: "0"
+             )
+Category.create!(title: "Biography",
+             parent_id: "0"
+             )

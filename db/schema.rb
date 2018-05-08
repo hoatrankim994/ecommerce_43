@@ -59,7 +59,8 @@ ActiveRecord::Schema.define(version: 20180503091151) do
     t.integer "price"
     t.integer "discount"
     t.integer "onhand"
-    t.string "productcontent"
+    t.text "productcontent"
+    t.string "author"
     t.string "image"
     t.integer "status"
     t.datetime "created_at", null: false
