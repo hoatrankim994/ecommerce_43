@@ -22,13 +22,23 @@
             <ul class="dropdown-menu">
               <li><%= link_to t("layouts.header.profile"), current_user %></li>
               <li><%= link_to t("layouts.header.setting"), edit_user_path(current_user) %></li>
-              <li><%= link_to t("layouts.header.add_book"), new_product_path %></li>
               <li class="divider"></li>
               <li>
                 <%= link_to t("layouts.header.log_out"), logout_path, method: :delete %>
               </li>
             </ul>
           </li>
+          <% if current_user.admin? %>
+            <li class="dropdown">
+              <%= link_to "#", class: "dropdown-toggle", data: {toggle: :dropdown} do %><%= t "layouts.header.admin" %><b class="caret"></b>
+              <% end %>
+              <ul class="dropdown-menu">
+                <li><%= link_to t("layouts.header.list_order"), admin_orders_path %></li>
+                <li><%= link_to t("layouts.header.list_product"), admin_products_path %></li>
+                <li><%= link_to t("layouts.header.add_book"), new_admin_product_path %></li>
+              </ul>
+            </li>
+          <% end %>
         <% else %>
           <li><%= link_to t("layouts.header.log_in"), login_path %></li>
         <% end %>

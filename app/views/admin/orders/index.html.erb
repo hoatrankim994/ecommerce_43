@@ -1,0 +1,17 @@
+<h1><%= t "orders.index.list_order" %></h1>
+<%= will_paginate @order_items %>
+<table class="table table-striped table-responsive-md btn-table">
+  <thead>
+    <tr>
+      <th><%= t "orders.index.id" %></th>
+      <th><%= t "orders.index.username" %></th>
+      <th><%= t "orders.index.totalamount" %></th>
+      <th><%= t "orders.index.status" %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: "order_item", collection: @order_items %>
+  </tbody>
+</table>
+<%= will_paginate @order_items %>

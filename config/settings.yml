@@ -6,3 +6,4 @@ leng_phone_max: 30
 check_remember: "1"
 pic_size: 5
 res_expired: 2
+per_page_order_items: 10
