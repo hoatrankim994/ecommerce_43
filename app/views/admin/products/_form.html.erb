@@ -1,7 +1,7 @@
 <%= form_for [:admin, @product] do |f| %>
-  <%= render "shared/error_messages_product" %>
+  <%= render "shared/error_messages", object: f.object %>
   <%= f.label :category %>
-  <%= f.select(:category_id, options_for_select(@categories), {prompt: "Select a category"}, {class: "form-control"}) %>
+  <%= f.select :category_id, options_for_select(@categories), {prompt: "Select a category"}, {class: "form-control"} %>
   <%= f.label :productname %>
   <%= f.text_field :productname, class: "form-control" %>
   <%= f.label :author %>
@@ -17,6 +17,6 @@
   <%= f.label :productcontent %>
   <%= f.text_area(:productcontent, size: "50x20") %>
   <%= f.label :status %>
-  <%= f.select(:status, options_for_select(Product.statuses.keys), {}, {class: "form-control"}) %>
+  <%= f.select :status, options_for_select(Product.statuses.keys), {}, {class: "form-control"} %>
   <%= f.submit t("products.form.sub"), class: "btn btn-primary" %>
 <% end %>

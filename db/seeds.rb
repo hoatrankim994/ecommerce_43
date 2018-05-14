@@ -29,11 +29,9 @@ end
 
 10.times do |n|
   title  = Faker::Book.genre
-  parent_id = 0
   catcontent = Faker::Lorem.sentence
   status = 1
   Category.create!(title:  title,
-               parent_id: parent_id,
                catcontent: catcontent,
                status: status)
 end

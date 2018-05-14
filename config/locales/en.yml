@@ -64,6 +64,34 @@ en:
       order_not_exist: "Order doesn't exist"
       success: "Order updated"
       role: "You have not rules"
+      create_order_errror: "Create order error"
+      create_order_success: "Create order sucess"
+      order: "Order"
+      back_cart: "Back Your Cart"
+      change_profile: "Change Profile"
+      ordered: "Ordered"
+    category:
+      del_cate: "Category deleted"
+      del_cate_fail: "Category fail deleted"
+      cate_not_exist: "Category doesn't exist"
+      success: "Category updated"
+      list_cate: "List Category"
+      new_cate: "New Category"
+    carts:
+      add_to_cart: "Add to cart"
+      add_to_cart_sucess: "Added to Cart"
+      product_not_found: "Product not found"
+      cart: "Cart"
+      quantity: "Quantity"
+      name: "Name"
+      price: "Price"
+      up: "Up"
+      down: "Down"
+      plus: "Plus"
+      minus: "Minus"
+      del: "Delete Cart"
+      home: "Home"
+      checkout: "Checkout"
   model:
     user:
       pic_less_5: "should be less than 5MB"
@@ -85,6 +113,8 @@ en:
       list_order: "List order"
       admin: "Admin"
       list_product: "List Product"
+      list_cate: "List Category"
+      add_cate: Add Category
     footer:
       book: "Book Store"
       the : "The"
@@ -102,8 +132,6 @@ en:
   shared:
     error:
       form_errors: "The form contains %{count} errors"
-    error_product:
-      orther: "The form contains %{count} errors"
   static_pages:
     about:
       about: "About"
@@ -168,6 +196,7 @@ en:
       totalamount: "Totalamount"
       status: "Status"
       details: "Details"
+      total: "Total"
     edit:
       order_detail: "Order detail"
       cus_info: "Customer information"
@@ -193,6 +222,16 @@ en:
         status: "Status"
         details: "Details"
         del: "Delete"
+    categories:
+      index:
+        id: "ID"
+        title: "Title"
+        status: "Status"
+        ids: "%{count}"
+      new:
+        new_cate: "New Category"
+      edit:
+        list_cate: "List Category"
   form:
     email_label: "Email"
     password_label: "Password"

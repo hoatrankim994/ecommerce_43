@@ -1,7 +1,6 @@
 class Admin::OrdersController < Admin::AdminController
   before_action :require_admin
   before_action :load_order, only: %i(edit update show)
-
   def index
     @order_items = Order.includes(:user).paginate page: params[:page], per_page: Settings.per_page_order_items
   end

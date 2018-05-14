@@ -4,16 +4,16 @@
   <div class="col-md-3">
     <%= form_for [:admin, @order] do |f| %>
       <%= f.label :status %>
-      <%= f.select(:status, options_for_select(Order.statuses.keys, @order.status), {}, {class: "form-control"}) %>
+      <%= f.select :status, options_for_select(Order.statuses.keys, @order.status), {}, {class: "form-control"} %>
       <%= f.submit t("orders.edit.update"), class: "btn btn-success" %>
     <% end %>
     <br>
     <ul class="list-group">
       <li class="list-group-item active"><%= t "orders.edit.cus_info" %></li>
-      <li class="list-group-item"><%= t "orders.edit.name" %><%= @order.user.name %></li>
-      <li class="list-group-item"><%= t "orders.edit.email" %><%= @order.user.email %></li>
-      <li class="list-group-item"><%= t "orders.edit.phone" %><%= @order.user.phone %></li>
-      <li class="list-group-item"><%= t "orders.edit.address" %><%= @order.user.address %></li>
+      <li class="list-group-item"><%= t "orders.edit.name" %><%= @order.user_name %></li>
+      <li class="list-group-item"><%= t "orders.edit.email" %><%= @order.user_email %></li>
+      <li class="list-group-item"><%= t "orders.edit.phone" %><%= @order.user_phone %></li>
+      <li class="list-group-item"><%= t "orders.edit.address" %><%= @order.user_address %></li>
     </ul>
   </div>
   <div class="col-md-9">

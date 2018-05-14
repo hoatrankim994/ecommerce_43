@@ -1,12 +1,13 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to t("layouts.header.book"), root_path, id: "logo" %>
+    <%= link_to t(".book"), root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to t("layouts.header.home"), root_path %></li>
-        <li><%= link_to t("layouts.header.help"), help_path %></li>
+        <li><%= link_to t(".home"), root_path %></li>
+        <li><%= link_to t(".help"), help_path %></li>
         <li class="dropdown">
-          <%= link_to "#", class: "dropdown-toggle", data: {toggle: :dropdown} do %><%= t("layouts.header.category") %><b class="caret"></b>
+          <%= link_to "#", class: "dropdown-toggle", data: {toggle: :dropdown} do %>
+            <%= t(".category") %><b class="caret"></b>
           <% end %>
           <ul class="dropdown-menu" role="menu">
             <% Category.all.each do |category| %>
@@ -15,33 +16,37 @@
           </ul>
         </li>
         <% if logged_in? %>
-          <li><%= link_to t("layouts.header.users"), users_path %></li>
+          <li><%= link_to t(".users"), users_path %></li>
           <li class="dropdown">
-            <%= link_to "#", class: "dropdown-toggle", data: {toggle: :dropdown} do %><%= t("layouts.header.account") %><b class="caret"></b>
+            <%= link_to "#", class: "dropdown-toggle", data: {toggle: :dropdown} do %><%= t(".account") %><b class="caret"></b>
             <% end %>
             <ul class="dropdown-menu">
-              <li><%= link_to t("layouts.header.profile"), current_user %></li>
-              <li><%= link_to t("layouts.header.setting"), edit_user_path(current_user) %></li>
+              <li><%= link_to t(".profile"), current_user %></li>
+              <li><%= link_to t(".setting"), edit_user_path(current_user) %></li>
               <li class="divider"></li>
               <li>
-                <%= link_to t("layouts.header.log_out"), logout_path, method: :delete %>
+                <%= link_to t(".log_out"), logout_path, method: :delete %>
               </li>
             </ul>
           </li>
           <% if current_user.admin? %>
             <li class="dropdown">
-              <%= link_to "#", class: "dropdown-toggle", data: {toggle: :dropdown} do %><%= t "layouts.header.admin" %><b class="caret"></b>
+              <%= link_to "#", class: "dropdown-toggle", data: {toggle: :dropdown} do %>
+                <%= t ".admin" %><b class="caret"></b>
               <% end %>
               <ul class="dropdown-menu">
-                <li><%= link_to t("layouts.header.list_order"), admin_orders_path %></li>
-                <li><%= link_to t("layouts.header.list_product"), admin_products_path %></li>
-                <li><%= link_to t("layouts.header.add_book"), new_admin_product_path %></li>
+                <li><%= link_to t(".list_order"), admin_orders_path %></li>
+                <li><%= link_to t(".list_product"), admin_products_path %></li>
+                <li><%= link_to t(".add_book"), new_admin_product_path %></li>
+                <li><%= link_to t(".list_cate"), admin_categories_path %></li>
+                <li><%= link_to t(".add_cate"), new_admin_category_path %></li>
               </ul>
             </li>
           <% end %>
         <% else %>
-          <li><%= link_to t("layouts.header.log_in"), login_path %></li>
+          <li><%= link_to t(".log_in"), login_path %></li>
         <% end %>
+        <li><%= link_to t("controller.carts.cart"), your_cart_path %></li>
       </ul>
     </nav>
   </div>

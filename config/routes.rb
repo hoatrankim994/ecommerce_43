@@ -12,13 +12,22 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+  get "/your_cart", to: "carts#show"
+  delete "/delete_cart", to: "carts#destroy"
+  get "/plus_product", to: "carts#plus"
+  get "/minus_product", to: "carts#minus"
+  get "/checkout", to: "orders#new"
+  post "/order_products", to: "orders#create"
   resources :users
+  resources :order_details
+  resources :carts
   resources :account_activations, only: [:edit]
   resources :password_resets, except: [:index, :destroy, :show]
   resources :products, only: [:show, :index]
-  resources :orders, only: [:show, :index]
+  resources :orders
   namespace :admin do
     resources :products, except: [:show]
     resources :orders, except: [:new, :create, :destroy]
+    resources :categories
   end
 end
