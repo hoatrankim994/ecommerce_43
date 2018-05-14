@@ -9,8 +9,3 @@
     <p><%= @product.productcontent %></p>
   </div>
 </div>
-<% if logged_in? %>
-  <%= link_to t("products.show.back"), root_path %>
-  <%= link_to t("products.show.edit"), edit_product_path(@product) %>
-  <%= link_to t("products.show.del"), product_path(@product), method: :delete, data: {confirm: t("products.show.sure")} %>
-<% end %>

@@ -30,6 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  product_price: "$ %{price}"
   hello: "Hello world"
   controller:
     application:
@@ -55,9 +56,14 @@ en:
       del_pro: "Product deleted"
       del_pro_fail: "Product fail deleted"
       pro_not_exist: "Product doesn't exist"
+      success: "Product updated"
     session:
       account_not: "Account not activated."
       check_mail: "Check your email for the activation link."
+    orders:
+      order_not_exist: "Order doesn't exist"
+      success: "Order updated"
+      role: "You have not rules"
   model:
     user:
       pic_less_5: "should be less than 5MB"
@@ -76,6 +82,9 @@ en:
       account: "Account"
       add_book: "Add Book"
       category: "Category"
+      list_order: "List order"
+      admin: "Admin"
+      list_product: "List Product"
     footer:
       book: "Book Store"
       the : "The"
@@ -151,6 +160,39 @@ en:
       category: "Category:"
       price: "Price:"
       quantity: " | Quantity:"
+  orders:
+    index:
+      list_order: "List Order"
+      id: "ID"
+      username: "Username"
+      totalamount: "Totalamount"
+      status: "Status"
+      details: "Details"
+    edit:
+      order_detail: "Order detail"
+      cus_info: "Customer information"
+      name: "Name: "
+      email: "Email: "
+      phone: "Phone: "
+      address: "Address: "
+      id: "ID"
+      productname: "Productname"
+      price: "Price"
+      quantity: "Quantity"
+      amount: "Amount"
+      totalamount: "Totalamount"
+      update: "Update"
+  admin:
+    orders:
+      index:
+        list_product: "List product"
+        id: "ID"
+        productname: "Productname"
+        category: "Category"
+        price: "Price"
+        status: "Status"
+        details: "Details"
+        del: "Delete"
   form:
     email_label: "Email"
     password_label: "Password"
@@ -179,4 +221,6 @@ en:
         phone: "Phone"
         gender: "Gender"
         avartar: "Avartar"
+      order:
+        status: "Status"
 
