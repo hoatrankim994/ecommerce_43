@@ -64,6 +64,13 @@ en:
       order_not_exist: "Order doesn't exist"
       success: "Order updated"
       role: "You have not rules"
+    category:
+      del_cate: "Category deleted"
+      del_cate_fail: "Category fail deleted"
+      cate_not_exist: "Category doesn't exist"
+      success: "Category updated"
+      list_cate: "List Category"
+      new_cate: "New Category"
   model:
     user:
       pic_less_5: "should be less than 5MB"
@@ -85,6 +92,8 @@ en:
       list_order: "List order"
       admin: "Admin"
       list_product: "List Product"
+      list_cate: "List Category"
+      add_cate: Add Category
     footer:
       book: "Book Store"
       the : "The"
@@ -102,8 +111,6 @@ en:
   shared:
     error:
       form_errors: "The form contains %{count} errors"
-    error_product:
-      orther: "The form contains %{count} errors"
   static_pages:
     about:
       about: "About"
@@ -193,6 +200,16 @@ en:
         status: "Status"
         details: "Details"
         del: "Delete"
+    categories:
+      index:
+        id: "ID"
+        title: "Title"
+        status: "Status"
+        ids: "%{count}"
+      new:
+        new_cate: "New Category"
+      edit:
+        list_cate: "List Category"
   form:
     email_label: "Email"
     password_label: "Password"

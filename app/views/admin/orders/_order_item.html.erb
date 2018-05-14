@@ -1,6 +1,6 @@
 <tr>
   <th scope="row"><%= order_item.id %></th>
-  <td><%= link_to order_item.user.name, order_item.user %></td>
+  <td><%= link_to order_item.user_name, order_item.user %></td>
   <td><%= t("product_price", price: order_item.totalamount) %></td>
   <td><%= order_item.status %></td>
   <td>
