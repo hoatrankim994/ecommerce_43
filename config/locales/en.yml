@@ -71,6 +71,9 @@ en:
       success: "Category updated"
       list_cate: "List Category"
       new_cate: "New Category"
+      exist_product: "Exist of product in category"
+      del_up_cate: "Success delete and update category"
+      del_up_cate_fail: "Fail delete and update category"
   model:
     user:
       pic_less_5: "should be less than 5MB"
@@ -152,6 +155,7 @@ en:
   products:
     form:
       sub: "Submit"
+      select_cate: "Select a category"
     edit:
       edit_book: "Edit book"
       sub: "Submit"
@@ -210,6 +214,10 @@ en:
         new_cate: "New Category"
       edit:
         list_cate: "List Category"
+        parent: "Parent"
+      show:
+        sel_cate: "Select orther Category"
+        del_continue: "Continue delete all product in category:"
   form:
     email_label: "Email"
     password_label: "Password"

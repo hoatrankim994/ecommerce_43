@@ -4,7 +4,8 @@ class Admin::ProductsController < Admin::AdminController
   before_action :map_category, except: %i(index destroy)
 
   def index
-    @products = Product.includes(:category).paginate page: params[:page], per_page: Settings.per_page_order_items
+    @products = Product.includes(:category).paginate page: params[:page],
+      per_page: Settings.per_page_order_items
   end
 
   def new

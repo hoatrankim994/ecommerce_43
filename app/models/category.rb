@@ -5,8 +5,8 @@ class Category < ApplicationRecord
   validates :catcontent, presence: true
   validates :title, presence: true
   validates :status, presence: true
-  scope :by_category, ->(parent_id){where(parent_id: parent_id)}
   scope :ordered_by_title, ->{order(title: :asc)}
+  scope :by_ids, ->(ids){where.not(id: ids)}
   enum status: {hide: 0, show: 1}
 
   def family_name
