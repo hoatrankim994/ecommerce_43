@@ -5,6 +5,8 @@ class OrdersController < ApplicationController
 
   def show; end
 
+  def create; end
+
   private
 
   def load_order
