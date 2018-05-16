@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :load_product, only: [:show]
+  before_action :load_product, only: :show
 
   def index
     if params[:category].blank?

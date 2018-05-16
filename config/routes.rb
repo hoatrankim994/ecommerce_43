@@ -20,5 +20,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :products, except: [:show]
     resources :orders, except: [:new, :create, :destroy]
+    resources :categories
   end
 end
