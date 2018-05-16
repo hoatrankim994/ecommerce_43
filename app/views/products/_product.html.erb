@@ -2,4 +2,5 @@
   <%= link_to product_path(product), class: "products" do %>
     <%= image_tag product.image.url %>
   <% end %>
+  <%= button_to t("controller.carts.add_to_cart"), order_details_path(product_id: product.id)%>
 </div>
