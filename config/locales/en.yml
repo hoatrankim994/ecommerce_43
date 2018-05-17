@@ -64,6 +64,12 @@ en:
       order_not_exist: "Order doesn't exist"
       success: "Order updated"
       role: "You have not rules"
+      create_order_errror: "Create order error"
+      create_order_success: "Create order sucess"
+      order: "Order"
+      back_cart: "Back Your Cart"
+      change_profile: "Change Profile"
+      ordered: "Ordered"
     category:
       del_cate: "Category deleted"
       del_cate_fail: "Category fail deleted"
@@ -71,6 +77,21 @@ en:
       success: "Category updated"
       list_cate: "List Category"
       new_cate: "New Category"
+    carts:
+      add_to_cart: "Add to cart"
+      add_to_cart_sucess: "Added to Cart"
+      product_not_found: "Product not found"
+      cart: "Cart"
+      quantity: "Quantity"
+      name: "Name"
+      price: "Price"
+      up: "Up"
+      down: "Down"
+      plus: "Plus"
+      minus: "Minus"
+      del: "Delete Cart"
+      home: "Home"
+      checkout: "Checkout"
   model:
     user:
       pic_less_5: "should be less than 5MB"
@@ -175,6 +196,7 @@ en:
       totalamount: "Totalamount"
       status: "Status"
       details: "Details"
+      total: "Total"
     edit:
       order_detail: "Order detail"
       cus_info: "Customer information"

@@ -4,14 +4,12 @@ class OrderDetailsController < ApplicationController
 
   def create
     if @cart
-      flash[:sucess] = t("controller.carts.add_to_cart_sucess")
       if @cart.key?(@product.id.to_s)
         @cart[@product.id] = @cart[@product.id.to_s] + 1
       else
         @cart[@product.id] = 1
       end
-    else
-      flash[:sucess] = t("controller.carts.add_to_cart_sucess")
+      flash[:success] = t("controller.carts.add_to_cart_sucess")
     end
   end
 

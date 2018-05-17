@@ -15,7 +15,8 @@ class Product < ApplicationRecord
   enum status: {hide: 0, show: 1}
   delegate :title, to: :category, prefix: true, allow_nil: true
   mount_uploader :image, PictureUploader
-  scope :by_product_id, -> (product_ids){where(:id => product_ids)}
+  scope :by_product_id, ->(product_ids){where(id: product_ids)}
+  scope :by_id, ->(product_id){where(id: product_id)}
   def image_size
     return if image.size <= Settings.pic_size.megabytes
     errors.add(:image, t("model.user.pic_less_5"))
