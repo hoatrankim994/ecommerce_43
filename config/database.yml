@@ -26,5 +26,4 @@ test:
 production:
   <<: *default
   database: ecommerce_43_production
-  username: ecommerce_43
-  password: <%= ENV['TESTMYSQL_DATABASE_PASSWORD'] %>
+
