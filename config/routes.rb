@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   resources :products, only: [:show, :index]
   resources :orders
   namespace :admin do
+    resource :admin, only: :index
+    root to: 'admin#index'
     resources :products, except: [:show]
     resources :orders, except: [:new, :create, :destroy]
     resources :categories
