@@ -13,26 +13,15 @@ gem "mini_magick", "4.7.0"
 gem "rails", "5.1.4"
 gem "faker"
 gem "fog", "1.42"
+gem "pg", "~> 0.18"
 gem "sass-rails", "5.0.6"
 gem "turbolinks", "5.0.1"
 gem "uglifier", "3.2.0"
 gem "will_paginate", "3.1.6"
 
-group :production do
-  gem "fog", "1.42"
-  gem "pg", "0.20.0"
-end
-
 group :development, :test do
   gem "byebug", "9.0.6", platform: :mri
   gem "mysql2", "~> 0.3.18"
-end
-
-group :development do
-  gem "listen", "3.1.5"
-  gem "spring", "2.0.2"
-  gem "spring-watcher-listen", "2.0.1"
-  gem "web-console", "3.5.1"
 end
 
 group :test do
