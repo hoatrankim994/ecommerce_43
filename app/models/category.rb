@@ -3,7 +3,7 @@ class Category < ApplicationRecord
   belongs_to :parent, class_name: Category.name, foreign_key: :parent_id, optional: true, inverse_of: :children
   has_many :children, class_name: Category.name, foreign_key: :parent_id, dependent: :nullify, inverse_of: :parent
   validates :catcontent, presence: true
-  validates :title, presence: true
+  validates :title, presence: { message: "Title no require" }
   validates :status, presence: true
   scope :ordered_by_title, ->{order(title: :asc)}
   scope :by_ids, ->(ids){where.not(id: ids)}

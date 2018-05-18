@@ -3,7 +3,7 @@ class Admin::CategoriesController < Admin::AdminController
   before_action :load_category, except: %i(new create index)
   before_action :map_category, only: %i(create update)
   before_action :load_products_in_category, only: %i(show destroy)
-  before_action :load_all_category, only: %i(new edit)
+  before_action :load_all_category, only: %i(new edit create)
 
   def index
     @categories = Category.all.ordered_by_title.paginate(page: params[:page],

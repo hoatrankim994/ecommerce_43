@@ -57,6 +57,8 @@ en:
       del_pro_fail: "Product fail deleted"
       pro_not_exist: "Product doesn't exist"
       success: "Product updated"
+      imp_pro: "Products imported."
+      invalid_csv: "Invalid CSV file format."
     session:
       account_not: "Account not activated."
       check_mail: "Check your email for the activation link."
@@ -161,6 +163,8 @@ en:
       sub: "Submit"
     index:
       book_cur: "There are no books currently in this categort"
+      import_file: "Import a CSV File"
+      import: "Import"
     new:
       new_book: "New Book"
     show:
