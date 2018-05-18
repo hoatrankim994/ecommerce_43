@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   get "/your_cart", to: "carts#show"
   delete "/delete_cart", to: "carts#destroy"
   get "/plus_product", to: "carts#plus"
-  get "minus_product", to: "carts#minus"
+  get "/minus_product", to: "carts#minus"
+  get "/checkout", to: "orders#new"
+  post "/order_products", to: "orders#create"
   resources :users
   resources :order_details
   resources :carts
