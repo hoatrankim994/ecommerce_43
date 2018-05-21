@@ -59,6 +59,7 @@ en:
       success: "Product updated"
       imp_pro: "Products imported."
       invalid_csv: "Invalid CSV file format."
+      purchase_history: "Purchase History"
     session:
       account_not: "Account not activated."
       check_mail: "Check your email for the activation link."

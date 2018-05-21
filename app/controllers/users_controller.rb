@@ -8,7 +8,9 @@ class UsersController < ApplicationController
     @users = User.paginate(page: params[:page])
   end
 
-  def show; end
+  def show
+    @products = Product.by_history_order(current_user.id)
+  end
 
   def new
     @user = User.new

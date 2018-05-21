@@ -9,3 +9,5 @@
     </section>
   </aside>
 </div>
+<h2><%= t "controller.products.purchase_history" %></h2>
+<%= render partial: "history_orders", collection: @products, as: :item %>

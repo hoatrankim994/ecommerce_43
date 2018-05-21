@@ -7,9 +7,13 @@ module CartsHelper
     end
     @sum
   end
+  
   def get_giftcode
     @giftcode_user = Giftcode.get_giftcode(@current_user.id)
-    @giftcode = @giftcode_user[0].id || 1
-    @giftcode
+    if @giftcode_user.empty?
+      @giftcode = 1
+    else
+      @giftcode = @giftcode_user[0].id
+    end
   end
 end
