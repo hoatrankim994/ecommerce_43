@@ -1,10 +1,11 @@
 class Admin::ProductsController < Admin::AdminController
   before_action :require_admin
-  before_action :load_product, except: %i(new create index)
+  before_action :load_product, except: %i(new create index import)
   before_action :map_category, except: %i(index destroy)
 
   def index
-    @products = Product.includes(:category).paginate page: params[:page], per_page: Settings.per_page_order_items
+    @products = Product.includes(:category).paginate page: params[:page],
+      per_page: Settings.per_page_order_items
   end
 
   def new
@@ -38,6 +39,13 @@ class Admin::ProductsController < Admin::AdminController
       flash[:danger] = t "controller.products.del_pro_fail"
     end
     redirect_to admin_products_path
+  end
+
+  def import
+    Product.import(params[:file])
+    redirect_to admin_products_path, notice: t("controller.products.imp_pro")
+  rescue StandardError, SecurityError
+    redirect_to admin_products_path, notice: t("controller.products.invalid_csv")
   end
 
   private

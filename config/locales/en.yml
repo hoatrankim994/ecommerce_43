@@ -57,6 +57,8 @@ en:
       del_pro_fail: "Product fail deleted"
       pro_not_exist: "Product doesn't exist"
       success: "Product updated"
+      imp_pro: "Products imported."
+      invalid_csv: "Invalid CSV file format."
     session:
       account_not: "Account not activated."
       check_mail: "Check your email for the activation link."
@@ -92,6 +94,10 @@ en:
       del: "Delete Cart"
       home: "Home"
       checkout: "Checkout"
+      exist_product: "Exist of product in category"
+      del_up_cate: "Success delete and update category"
+      del_up_cate_fail: "Fail delete and update category"
+
   model:
     user:
       pic_less_5: "should be less than 5MB"
@@ -173,11 +179,14 @@ en:
   products:
     form:
       sub: "Submit"
+      select_cate: "Select a category"
     edit:
       edit_book: "Edit book"
       sub: "Submit"
     index:
       book_cur: "There are no books currently in this categort"
+      import_file: "Import a CSV File"
+      import: "Import"
     new:
       new_book: "New Book"
     show:
@@ -232,6 +241,10 @@ en:
         new_cate: "New Category"
       edit:
         list_cate: "List Category"
+        parent: "Parent"
+      show:
+        sel_cate: "Select orther Category"
+        del_continue: "Continue delete all product in category:"
   form:
     email_label: "Email"
     password_label: "Password"
