@@ -26,7 +26,9 @@ Rails.application.routes.draw do
   resources :products, only: [:show, :index]
   resources :orders
   namespace :admin do
-    resources :products, except: [:show]
+    resources :products, except: :show do
+      collection { post :import }
+    end
     resources :orders, except: [:new, :create, :destroy]
     resources :categories
   end
