@@ -98,11 +98,30 @@ en:
       exist_product: "Exist of product in category"
       del_up_cate: "Success delete and update category"
       del_up_cate_fail: "Fail delete and update category"
-
   model:
     user:
       pic_less_5: "should be less than 5MB"
   layouts:
+    admin:
+      add_book: "Add Book"
+      category: "Category"
+      list_order: "List order"
+      admin: "Admin"
+      list_product: "List Product"
+      list_cate: "List Category"
+      add_cate: "Add Category"
+      dashboard: "Dashboard"
+      home: "Home"
+      nice: "Nice"
+      information: "Information"
+      my_profile: "My Profile"
+      log_out: "Log Out"
+      free_bootstrap: "Free Bootstrap Templates"
+      bootstrapmade: "BootstrapMade"
+      by: " by "
+      order: "Order"
+      user: "Users"
+      product: "Product"
     application:
       book: "Book Store"
     header:
@@ -198,31 +217,8 @@ en:
       category: "Category:"
       price: "Price:"
       quantity: " | Quantity:"
-  orders:
-    index:
-      list_order: "List Order"
-      id: "ID"
-      username: "Username"
-      totalamount: "Totalamount"
-      status: "Status"
-      details: "Details"
-      total: "Total"
-    edit:
-      order_detail: "Order detail"
-      cus_info: "Customer information"
-      name: "Name: "
-      email: "Email: "
-      phone: "Phone: "
-      address: "Address: "
-      id: "ID"
-      productname: "Productname"
-      price: "Price"
-      quantity: "Quantity"
-      amount: "Amount"
-      totalamount: "Totalamount"
-      update: "Update"
   admin:
-    orders:
+    products:
       index:
         list_product: "List product"
         id: "ID"
@@ -246,6 +242,29 @@ en:
       show:
         sel_cate: "Select orther Category"
         del_continue: "Continue delete all product in category:"
+    orders:
+      index:
+        list_order: "List Order"
+        id: "ID"
+        username: "Username"
+        totalamount: "Totalamount"
+        status: "Status"
+        details: "Details"
+        total: "Total"
+      edit:
+        order_detail: "Order detail"
+        cus_info: "Customer information"
+        name: "Name: "
+        email: "Email: "
+        phone: "Phone: "
+        address: "Address: "
+        id: "ID"
+        productname: "Productname"
+        price: "Price"
+        quantity: "Quantity"
+        amount: "Amount"
+        totalamount: "Totalamount"
+        update: "Update"
   form:
     email_label: "Email"
     password_label: "Password"
