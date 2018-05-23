@@ -39,8 +39,14 @@
       </li>
       <li>
         <%= link_to admin_orders_path do %>
-            <i class="icon_document_alt"></i>
-            <span><%= t "layouts.admin.order" %></span>
+          <i class="icon_document_alt"></i>
+          <span><%= t "layouts.admin.order" %></span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to admin_users_path do %>
+          <i class="icon_document_alt"></i>
+          <span><%= t "layouts.admin.user" %></span>
         <% end %>
       </li>
     </ul>

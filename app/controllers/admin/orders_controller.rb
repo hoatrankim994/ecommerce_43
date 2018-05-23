@@ -3,8 +3,8 @@ class Admin::OrdersController < Admin::AdminController
   before_action :load_order, only: %i(edit update show)
 
   def index
-    @orders = Order.includes(:user)
-      .paginate page: params[:page], per_page: Settings.per_page_order_items
+    @orders = Order.includes(:user).paginate page: params[:page],
+      per_page: Settings.per_page_order_items
   end
 
   def show; end

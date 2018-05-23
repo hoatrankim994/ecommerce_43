@@ -6,8 +6,9 @@ class Admin::CategoriesController < Admin::AdminController
   before_action :load_all_category, only: %i(new edit create)
 
   def index
-    @categories = Category.all.ordered_by_title.paginate(page: params[:page],
-      per_page: Settings.per_page_order_items)
+    @categories = Category.all.ordered_by_title
+                          .search_by_title(params[:search])
+                          .paginate page: params[:page], per_page: Settings.per_page
   end
 
   def new

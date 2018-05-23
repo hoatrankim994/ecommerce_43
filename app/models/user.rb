@@ -14,6 +14,7 @@ class User < ApplicationRecord
   before_save :downcase_email
   before_create :create_activation_digest
   enum role: {admin: 0, user: 1, customer: 2}
+  scope :search_by_name, ->(key){where("email LIKE ? OR name LIKE ?", "%#{key}%", "%#{key}%") if key.present?}
   has_secure_password
   mount_uploader :avartar, PictureUploader
 

@@ -4,8 +4,9 @@ class Admin::ProductsController < Admin::AdminController
   before_action :map_category, except: %i(index destroy)
 
   def index
-    @products = Product.includes(:category).paginate page: params[:page],
-      per_page: Settings.per_page_order_items
+    @products = Product.includes(:category)
+                       .search_by_productname(params[:search])
+                       .paginate page: params[:page], per_page: Settings.per_page
   end
 
   def new
@@ -15,7 +16,7 @@ class Admin::ProductsController < Admin::AdminController
   def create
     @product = Product.new product_params
     if @product.save
-      redirect_to root_url
+      redirect_to admin_products_path
     else
       render :new
     end
