@@ -3,5 +3,7 @@
   <td><%= order_detail.product.productname %></td>
   <td><%= t("product_price", price: order_detail.unitprice) %></td>
   <td><%= order_detail.quantity %></td>
-  <td><%= t("product_price", price: total_price(order_detail.quantity, order_detail.unitprice)) %></td>
+  <td>
+    <%= t "product_price", price: total_price(order_detail.quantity, order_detail.unitprice) %>
+  </td>
 </tr>
