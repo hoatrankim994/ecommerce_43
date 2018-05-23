@@ -12,11 +12,16 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new order_params
-    if @order.save
-      flash[:success] = t "controller.orders.create_order_success"
+    ActiveRecord::Base.transaction do
+      @order.save
+      @cart.each do |key, val|
+        @order_detail = OrderDetail.new(product_id: key.to_i, order_id: @order.id, quantity: val)
+        @order_detail.save
+      end
       session[:cart] = nil
+      flash[:success] = t "controller.orders.create_order_success"
       redirect_to root_path
-    else
+      raise ActiveRecord::Rollback
       flash[:danger] = t "controller.orders.create_order_errror"
       redirect_to root_path
     end
