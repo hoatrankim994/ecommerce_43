@@ -18,6 +18,7 @@ class Product < ApplicationRecord
   mount_uploader :image, PictureUploader
   scope :by_product_id, ->(product_ids){where(id: product_ids)}
   scope :by_id, ->(product_id){where(id: product_id)}
+  scope :by_history_order, ->(id){Product.joins(order_details: {order: :user}).where("user_id = ? ", id).uniq}
   def image_size
     return if image.size <= Settings.pic_size.megabytes
     errors.add(:image, t("model.user.pic_less_5"))

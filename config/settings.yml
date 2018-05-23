@@ -7,6 +7,4 @@ check_remember: "1"
 pic_size: 5
 res_expired: 2
 per_page_order_items: 10
-size:
-  col: 50
-  row: 20
+size: "100x10"
