@@ -14,7 +14,6 @@
 //= require bootstrap
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
 //= require myscript
 //= require highcharts
 //= require chartkick

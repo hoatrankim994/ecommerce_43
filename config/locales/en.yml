@@ -103,6 +103,7 @@ en:
       pic_less_5: "should be less than 5MB"
   layouts:
     admin:
+      keyword: "Keyword"
       add_book: "Add Book"
       category: "Category"
       list_order: "List order"
@@ -228,12 +229,14 @@ en:
         status: "Status"
         details: "Details"
         del: "Delete"
+        not_found_products: "Not found products"
     categories:
       index:
         id: "ID"
         title: "Title"
         status: "Status"
         ids: "%{count}"
+        not_found_categories: "Not found categories"
       new:
         new_cate: "New Category"
       edit:
@@ -265,6 +268,16 @@ en:
         amount: "Amount"
         totalamount: "Totalamount"
         update: "Update"
+    users:
+      index:
+        id: "ID"
+        name: "Name"
+        gender: "Gender"
+        address: "Address"
+        phone: "Phone"
+        email: "Email"
+        not_found_users: "Not found users"
+        list_user: "List Users"
   form:
     email_label: "Email"
     password_label: "Password"

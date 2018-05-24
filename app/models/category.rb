@@ -7,6 +7,7 @@ class Category < ApplicationRecord
   validates :status, presence: true
   scope :ordered_by_title, ->{order(title: :asc)}
   scope :by_ids, ->(ids){where.not(id: ids)}
+  scope :search_by_title, ->(title){where("title LIKE ? ", "%#{title}%") if title.present?}
   enum status: {hide: 0, show: 1}
 
   def family_name
