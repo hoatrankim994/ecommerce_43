@@ -1,12 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, except: %i(create new)
-  before_action :admin_user, only: :destroy
-  before_action :load_user, only: %i(show destroy)
-  before_action :correct_user, except: %i(index show destroy)
-
-  def index
-    @users = User.paginate(page: params[:page])
-  end
+  before_action :load_user, only: :show
+  before_action :correct_user, except: :show
 
   def show
     @products = Product.by_history_order(current_user.id)
@@ -38,16 +33,6 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       render :edit
-    end
-  end
-
-  def destroy
-    if @user.destroy
-      flash[:success] = t "controller.users.del_user"
-      redirect_to users_url
-    else
-      flash[:danger] = t "controller.users.del_user_fail"
-      redirect_to root_url
     end
   end
 

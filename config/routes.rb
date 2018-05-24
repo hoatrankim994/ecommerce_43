@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get "/minus_product", to: "carts#minus"
   get "/checkout", to: "orders#new"
   post "/order_products", to: "orders#create"
-  resources :users
+  resources :users, except: %i(index destroy)
   resources :order_details
   resources :carts
   resources :account_activations, only: [:edit]
@@ -33,5 +33,6 @@ Rails.application.routes.draw do
     end
     resources :orders, except: [:new, :create, :destroy]
     resources :categories
+    resources :users, only: %i(index destroy)
   end
 end
