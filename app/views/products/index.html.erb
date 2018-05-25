@@ -3,6 +3,6 @@
   <h1><%= t "products.index.book_cur" %></h1>
 <% else %>
   <div class="row">
-    <%= render partial: "product", collection: @products %>
+    <%= render @products %>
   </div>
 <% end %>
