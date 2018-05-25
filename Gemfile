@@ -21,11 +21,6 @@ gem "turbolinks", "5.0.1"
 gem "uglifier", "3.2.0"
 gem "will_paginate", "3.1.6"
 
-group :development, :test do
-  gem "byebug", "9.0.6", platform: :mri
-  gem "mysql2", "~> 0.3.18"
-end
-
 group :test do
   gem "guard", "2.13.0"
   gem "guard-minitest", "2.4.4"

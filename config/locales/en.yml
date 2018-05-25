@@ -141,7 +141,9 @@ en:
       admin: "Admin"
       list_product: "List Product"
       list_cate: "List Category"
-      add_cate: Add Category
+      add_cate: "Add Category"
+      submit: "submit"
+      search: "Search"
     footer:
       book: "Book Store"
       the : "The"
@@ -218,6 +220,14 @@ en:
       category: "Category:"
       price: "Price:"
       quantity: " | Quantity:"
+  filters:
+    show:
+      alphabet: "alphabet"
+      category: "category"
+      min_price: "min_price"
+      max_price: "max_price"
+      search: "Search"
+      not_found_product: "Not found product"
   admin:
     products:
       index:
