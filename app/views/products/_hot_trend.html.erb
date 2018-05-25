@@ -1,0 +1,8 @@
+<div class="col-md-3">
+  <%= link_to product_path(hot_trend), class: "products" do %>
+    <%= image_tag hot_trend.image.url %>
+  <% end %>
+  <%= link_to product_path(hot_trend), class: "products" do %>
+    <%= hot_trend.productname %>
+  <% end %>
+</div>

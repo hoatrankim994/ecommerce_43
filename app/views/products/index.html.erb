@@ -1,8 +1,14 @@
+<h1><%= t ".hot_trend" %></h1>
+<div class="row">
+   <%= render partial: "hot_trend", collection: @hot_trends, as: :hot_trend %>
+</div>
 <h1><%= params[:category] %></h1>
 <% if @products.count == 0 %>
   <h1><%= t "products.index.book_cur" %></h1>
 <% else %>
+  <h1><%= t ".new_product" %></h1>
   <div class="row">
     <%= render @products %>
+    <%= will_paginate @products %>
   </div>
 <% end %>

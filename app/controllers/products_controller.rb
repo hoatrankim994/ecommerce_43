@@ -3,10 +3,14 @@ class ProductsController < ApplicationController
 
   def index
     if params[:category].blank?
-      @products = Product.by_status(:show).order_by_created
+      @products = Product.by_status(:show).order_by_created.paginate page: params[:page],
+        per_page: Settings.per_page_index
+      @hot_trends = Product.hot_trend
     else
       @category = Category.find_by title: params[:category]
-      @products = @category.products.by_status(:show).order_by_created if @category
+      @products =
+        @category.products.by_status(:show).order_by_created.paginate page: params[:page],
+          per_page: Settings.per_page_index if @category
     end
   end
 

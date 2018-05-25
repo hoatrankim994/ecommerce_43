@@ -210,6 +210,8 @@ en:
       book_cur: "There are no books currently in this categort"
       import_file: "Import a CSV File"
       import: "Import"
+      hot_trend: "Hot Trend"
+      new_product: "New Product"
     new:
       new_book: "New Book"
     show:

@@ -25,6 +25,11 @@ class Product < ApplicationRecord
   scope :filter_by_category, ->(category_id){where(category_id: category_id) if category_id.present?}
   scope :filter_by_min_price, ->(min_price){where("price >= ?", min_price) if min_price.present?}
   scope :filter_by_max_price, ->(max_price){where("price <= ?", max_price) if max_price.present?}
+  scope :hot_trend, (lambda do
+    select("products.*").joins(:order_details)
+    .group(:id, :productname, :price, :onhand, :category_id, :created_at, :updated_at)
+    .order("SUM(order_details.quantity) DESC").limit 8
+  end)
 
   def image_size
     return if image.size <= Settings.pic_size.megabytes
@@ -49,5 +54,15 @@ class Product < ApplicationRecord
     when ".xlsx" then Roo::Excelx.new(file.path)
     else raise file.original_filename
     end
+  end
+
+  def self.filter_product params
+    result = Product.all
+    result = result.filter_by_alphabet params[:alphabet] if params[:alphabet].present?
+    result = result.filter_by_name params[:name] if params[:name].present?
+    result = result.filter_by_category params[:category_id] if params[:category_id].present?
+    result = result.filter_by_min_price params[:min_price] if params[:min_price].present?
+    result = result.filter_by_max_price params[:max_price] if params[:max_price].present?
+    result
   end
 end
